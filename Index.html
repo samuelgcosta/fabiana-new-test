@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursos de Micropigmentação Paramédica — Fabiana Pereira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1E3054;--navy-light:#2A4170;--navy-dark:#15213B;--navy-deep:#111B2E;
+  --gold:#C4A265;--gold-light:#D4BA88;--gold-dark:#A8884E;--gold-glow:rgba(196,162,101,.15);
+  --cream:#FAF6F0;--cream-mid:#F2ECE2;--white:#FFFFFF;
+  --text-body:#4A5068;--text-muted:#7A8298;--text-light:rgba(255,255,255,.75);
+  --success:#4CAF50;--red-soft:#C0392B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+.section{padding:80px 0}
+.section-dark{background:var(--navy-deep);color:var(--white)}
+.section-mid{background:var(--cream-mid)}
+.section-navy{background:var(--navy);color:var(--white)}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title .overline{display:inline-block;color:var(--gold);font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.section-title h2{font-size:clamp(26px,4vw,40px);font-weight:600}
+.section-title h2 em{font-style:italic;color:var(--gold)}
+.section-dark .section-title h2 em,.section-navy .section-title h2 em{color:var(--gold-light)}
+
+.top-bar{background:var(--navy-deep);color:var(--gold-light);text-align:center;padding:10px 16px;font-size:13px;font-weight:500;letter-spacing:.5px}
+.top-bar span{color:var(--gold);font-weight:700}
+
+/* HERO */
+.hero{background:var(--navy);color:var(--white);padding:0;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;min-height:560px}
+.hero-content{padding:64px 24px 64px 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;max-width:620px;margin-left:auto;margin-right:40px}
+.hero-img-wrap{position:relative;overflow:hidden}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,transparent 40%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-glow);border:1px solid rgba(196,162,101,.25);border-radius:100px;padding:6px 18px;font-size:12px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:24px;width:fit-content}
+.hero h1{font-size:clamp(26px,4vw,42px);font-weight:700;margin-bottom:20px}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero-sub{font-size:17px;color:var(--text-light);margin-bottom:32px;line-height:1.8;text-align:left}
+.hero-stats{display:flex;gap:36px;margin-bottom:36px;flex-wrap:wrap}
+.hero-stat strong{display:block;font-size:26px;font-family:'Playfair Display',serif;color:var(--gold)}
+.hero-stat span{font-size:12px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px}
+
+.cta-btn{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);color:var(--navy-deep);font-weight:700;font-size:15px;padding:16px 40px;border-radius:8px;cursor:pointer;transition:all .3s;text-transform:uppercase;letter-spacing:1px;border:none;box-shadow:0 4px 20px rgba(196,162,101,.3);text-align:center}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(196,162,101,.45)}
+.cta-sub{display:block;margin-top:12px;font-size:13px;color:var(--text-muted)}
+
+/* DOR */
+.pain-list{max-width:700px;margin:0 auto}
+.pain-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(30,48,84,.08)}
+.pain-icon{width:36px;height:36px;border-radius:50%;background:rgba(192,57,43,.08);color:var(--red-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.pain-item p{font-size:16px;color:var(--text-body);text-align:left}
+.pain-item p strong{color:var(--navy)}
+
+/* AUTORIDADE */
+.auth-grid{display:grid;grid-template-columns:.45fr 1fr;gap:48px;align-items:center}
+.auth-img-wrap{position:relative}
+.auth-img{width:100%;max-width:380px;border-radius:16px;border:3px solid var(--gold);box-shadow:0 10px 40px rgba(0,0,0,.3);object-fit:cover;margin:0 auto}
+.auth-text h2{font-size:clamp(24px,3.5vw,36px);margin-bottom:20px;color:var(--white)}
+.auth-text h2 em{color:var(--gold-light);font-style:italic}
+.auth-text p{color:var(--text-light);margin-bottom:16px;font-size:16px;text-align:left}
+.auth-creds{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.auth-cred{background:rgba(196,162,101,.1);border:1px solid rgba(196,162,101,.2);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--gold-light);font-weight:500}
+
+.social-photos{max-width:900px;margin:40px auto 0}
+.social-photo-card{border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.25);border:2px solid rgba(196,162,101,.2);transition:all .3s}
+.social-photo-card:hover{transform:translateY(-4px);border-color:rgba(196,162,101,.4)}
+.social-photo-card img{width:100%;height:auto}
+.social-standalone{max-width:500px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.15);border:2px solid rgba(196,162,101,.15)}
+.social-standalone img{width:100%;height:auto}
+
+/* DEPOIMENTOS */
+.depo-section{position:relative;overflow:hidden}
+.depo-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dark),transparent)}
+.quote-bg{position:absolute;top:20px;right:5%;font-family:'Playfair Display',serif;font-size:250px;color:rgba(196,162,101,.04);line-height:1;pointer-events:none}
+.depo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:900px;margin:0 auto}
+.depo-card{background:rgba(255,255,255,.04);border:1px solid rgba(196,162,101,.15);border-radius:16px;padding:20px;transition:all .4s;position:relative;overflow:hidden}
+.depo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));opacity:0;transition:opacity .4s}
+.depo-card:hover{transform:translateY(-4px);border-color:rgba(196,162,101,.35);background:rgba(255,255,255,.07);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.depo-card:hover::before{opacity:1}
+.depo-img-wrapper{border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.depo-img-wrapper img{width:100%;height:auto;transition:transform .5s}
+.depo-card:hover .depo-img-wrapper img{transform:scale(1.02)}
+.depo-badge{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;color:var(--gold-light);opacity:.7}
+.depo-badge svg{width:14px;height:14px;fill:var(--gold)}
+.depo-context{text-align:center;margin-top:30px;padding-top:24px;border-top:1px solid rgba(196,162,101,.12)}
+.depo-context p{color:rgba(255,255,255,.4);font-size:14px;font-style:italic}
+.depo-context span{color:var(--gold);font-weight:600}
+
+/* CURSOS — títulos centralizados, descrições alinhadas à esquerda */
+.curso-header{text-align:center;margin-bottom:40px}
+.curso-tag{display:inline-block;background:var(--gold);color:var(--navy-deep);font-size:12px;font-weight:700;padding:4px 16px;border-radius:100px;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.curso-header h3{font-size:clamp(24px,3.5vw,34px);margin-bottom:12px}
+.curso-header h3 em{color:var(--gold);font-style:italic}
+.section-dark .curso-header h3 em{color:var(--gold-light)}
+.curso-header p{color:var(--text-body);max-width:650px;margin:0 auto;font-size:16px;text-align:left}
+.section-dark .curso-header p{color:var(--text-light)}
+.modulos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:32px}
+.modulo-card{background:var(--white);border-radius:12px;padding:24px;border:1px solid rgba(30,48,84,.08);transition:all .3s;text-align:left}
+.section-dark .modulo-card{background:rgba(255,255,255,.06);border-color:rgba(196,162,101,.12)}
+.section-dark .modulo-card h4{color:var(--white)}
+.section-dark .modulo-card p{color:var(--text-light)}
+.modulo-card:hover{box-shadow:0 4px 20px rgba(30,48,84,.08);transform:translateY(-2px)}
+.modulo-num{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);font-weight:700;margin-bottom:8px}
+.modulo-card h4{font-size:17px;margin-bottom:8px;color:var(--navy)}
+.modulo-card p{font-size:14px;color:var(--text-body)}
+.curso-cta{text-align:center;margin-top:32px}
+
+/* ANTES/DEPOIS */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:32px auto 0}
+.ba-card{border-radius:14px;overflow:hidden;border:2px solid rgba(196,162,101,.2);box-shadow:0 4px 20px rgba(0,0,0,.15);transition:all .3s}
+.ba-card:hover{transform:translateY(-3px);border-color:rgba(196,162,101,.4)}
+.ba-card img{width:100%;height:auto}
+.ba-caption{padding:12px 16px;text-align:center;font-size:13px;color:var(--text-body);background:var(--white);font-weight:500}
+.section-dark .ba-caption{background:rgba(255,255,255,.06);color:var(--text-light)}
+
+/* FOTOS DE ENSINO */
+.teaching-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto 40px;align-items:start}
+.teaching-duo-card{border-radius:14px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.2);border:2px solid rgba(196,162,101,.15);transition:all .3s}
+.teaching-duo-card:hover{transform:translateY(-3px);border-color:rgba(196,162,101,.35)}
+.teaching-duo-card img{width:100%;height:auto;object-fit:contain}
+.teaching-text-block{max-width:700px;margin:0 auto}
+.teaching-text-block h3{font-size:clamp(22px,3vw,30px);margin-bottom:16px;text-align:center}
+.teaching-text-block h3 em{color:var(--gold);font-style:italic}
+.teaching-text-block p{color:var(--text-body);margin-bottom:12px;font-size:15px;text-align:left}
+
+/* BÔNUS */
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.bonus-card{background:rgba(255,255,255,.06);border:1px solid rgba(196,162,101,.15);border-radius:12px;padding:24px;transition:all .3s;text-align:left}
+.bonus-card:hover{border-color:rgba(196,162,101,.35);background:rgba(255,255,255,.1)}
+.bonus-num{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);margin-bottom:8px}
+.bonus-card h4{font-size:16px;margin-bottom:8px;color:var(--white)}
+.bonus-card p{font-size:14px;color:var(--text-light);margin-bottom:12px}
+.bonus-value{font-size:13px;color:var(--gold-light)}
+.bonus-value s{color:var(--text-muted);margin-left:4px}
+
+/* PARA QUEM */
+.target-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto}
+.target-box{border-radius:14px;padding:32px;text-align:left}
+.target-box.yes{background:var(--white);border:2px solid rgba(76,175,80,.2)}
+.target-box.no{background:var(--white);border:2px solid rgba(192,57,43,.12)}
+.target-box h3{font-size:20px;margin-bottom:20px}
+.target-box ul{list-style:none}
+.target-box li{padding:8px 0;font-size:15px;color:var(--text-body);display:flex;gap:10px;align-items:flex-start}
+.target-box li .icon{color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* OFERTA */
+.oferta-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:720px;margin:0 auto}
+.oferta-card{background:var(--white);border-radius:16px;padding:32px 24px;text-align:center;border:2px solid rgba(30,48,84,.08);transition:all .3s;position:relative}
+.oferta-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(30,48,84,.12)}
+.oferta-card h3{font-size:20px;margin-bottom:8px;color:var(--navy)}
+.oferta-card .price-old{font-size:15px;color:var(--text-muted);text-decoration:line-through;margin-bottom:4px}
+.oferta-card .price{font-size:40px;font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;margin-bottom:4px}
+.oferta-card .price small{font-size:18px}
+.oferta-card .price-info{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.oferta-card ul{list-style:none;text-align:left;margin-bottom:28px}
+.oferta-card li{padding:5px 0;font-size:14px;color:var(--text-body);display:flex;gap:8px;align-items:flex-start}
+.oferta-card li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+
+/* GARANTIA */
+.garantia{display:flex;gap:28px;align-items:center;max-width:700px;margin:40px auto 0;background:rgba(76,175,80,.06);border:1px solid rgba(76,175,80,.15);border-radius:14px;padding:28px 32px;text-align:left}
+.garantia-icon{font-size:48px;flex-shrink:0}
+.garantia h4{font-size:18px;color:var(--navy);margin-bottom:8px}
+.garantia p{font-size:14px;color:var(--text-body)}
+
+/* FAQ */
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(30,48,84,.08)}
+.faq-question{width:100%;background:none;border:none;padding:20px 0;font-size:16px;font-weight:600;color:var(--navy);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif}
+.faq-question .arrow{font-size:22px;color:var(--gold);transition:transform .3s;font-weight:300}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-answer-inner{padding:0 0 20px;font-size:15px;color:var(--text-body);line-height:1.7;text-align:left}
+.faq-item.open .faq-answer{max-height:300px}
+.faq-item.open .arrow{transform:rotate(45deg)}
+
+/* CTA FINAL */
+.final-cta{background:linear-gradient(170deg,var(--navy-dark),var(--navy-deep));color:var(--white);padding:80px 0;text-align:center}
+.final-cta h2{font-size:clamp(24px,3.5vw,36px);margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto}
+.final-cta h2 em{color:var(--gold-light);font-style:italic}
+.final-cta p{color:var(--text-light);margin-bottom:36px;max-width:550px;margin-left:auto;margin-right:auto}
+.final-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--navy-deep);color:rgba(255,255,255,.4);text-align:center;padding:28px 16px;font-size:13px}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .section{padding:60px 0}
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-img-wrap{height:380px;max-height:none}
+  .hero-img-wrap img{height:100%;object-position:66% 44%}
+  .hero-img-overlay{background:linear-gradient(180deg,var(--navy) 0%,rgba(30,48,84,.68) 8%,transparent 24%)}
+  .hero-content{padding:48px 24px;margin:0}
+  .hero-stats{gap:20px}
+  .auth-grid{grid-template-columns:1fr;text-align:center}
+  .auth-img{max-width:280px}
+  .auth-text{text-align:center}
+  .auth-text p{text-align:left}
+  .auth-creds{justify-content:center}
+  .social-standalone{max-width:100%}
+  .depo-grid{grid-template-columns:1fr;max-width:440px}
+  .teaching-duo{grid-template-columns:1fr 1fr;gap:12px}
+  .ba-grid{grid-template-columns:1fr;max-width:400px}
+  .target-grid{grid-template-columns:1fr}
+  .oferta-cards{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+  .garantia{flex-direction:column;text-align:left}
+  .final-cta-btns{flex-direction:column;align-items:center}
+  .modulos-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:480px){
+  .hero-img-wrap{height:350px}
+  .hero-img-wrap img{object-position:68% 44%}
+}
+/* COMBO OFERTA */
+.oferta-layout{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:24px;max-width:960px;margin:0 auto;align-items:start}
+.oferta-card-single{background:var(--white);border-radius:16px;padding:28px 20px;text-align:center;border:2px solid rgba(30,48,84,.08);transition:all .3s;position:relative;opacity:.92}
+.oferta-card-single:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(30,48,84,.12);opacity:1}
+.oferta-card-single h3{font-size:18px;margin-bottom:8px;color:var(--navy)}
+.oferta-card-single .price-old{font-size:14px;color:var(--text-muted);text-decoration:line-through;margin-bottom:4px}
+.oferta-card-single .price{font-size:34px;font-family:'Playfair Display',serif;color:var(--navy);font-weight:700;margin-bottom:4px}
+.oferta-card-single .price small{font-size:16px}
+.oferta-card-single .price-info{font-size:12px;color:var(--text-muted);margin-bottom:20px}
+.oferta-card-single ul{list-style:none;text-align:left;margin-bottom:24px}
+.oferta-card-single li{padding:4px 0;font-size:13px;color:var(--text-body);display:flex;gap:8px;align-items:flex-start}
+.oferta-card-single li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0}
+.oferta-card-combo{background:linear-gradient(170deg,var(--navy),var(--navy-dark));border-radius:20px;padding:36px 28px;text-align:center;position:relative;color:var(--white);border:3px solid var(--gold);box-shadow:0 12px 48px rgba(196,162,101,.25);transform:scale(1.02)}
+.oferta-card-combo:hover{transform:scale(1.04);box-shadow:0 16px 56px rgba(196,162,101,.35)}
+.combo-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--navy-deep);font-size:12px;font-weight:700;padding:6px 24px;border-radius:100px;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap;box-shadow:0 4px 16px rgba(196,162,101,.4)}
+.combo-savings{display:inline-block;background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.3);color:#6ECF72;font-size:13px;font-weight:600;padding:4px 16px;border-radius:100px;margin-bottom:16px}
+.oferta-card-combo h3{font-size:22px;margin-bottom:6px;color:var(--white)}
+.oferta-card-combo .combo-includes{font-size:14px;color:var(--gold-light);margin-bottom:16px;font-style:italic}
+.oferta-card-combo .price-old-combo{font-size:16px;color:rgba(255,255,255,.45);text-decoration:line-through;margin-bottom:4px}
+.oferta-card-combo .price{font-size:48px;font-family:'Playfair Display',serif;color:var(--gold);font-weight:700;margin-bottom:4px}
+.oferta-card-combo .price small{font-size:20px}
+.oferta-card-combo .price-info{font-size:13px;color:var(--text-light);margin-bottom:24px}
+.oferta-card-combo ul{list-style:none;text-align:left;margin-bottom:28px}
+.oferta-card-combo li{padding:5px 0;font-size:14px;color:rgba(255,255,255,.85);display:flex;gap:8px;align-items:flex-start}
+.oferta-card-combo li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
+.oferta-card-combo .cta-btn{width:100%;font-size:16px;padding:18px 40px}
+.combo-anchor{text-align:center;max-width:600px;margin:0 auto 40px;padding:20px 28px;background:rgba(196,162,101,.06);border:1px dashed rgba(196,162,101,.25);border-radius:12px}
+.combo-anchor p{font-size:15px;color:var(--text-body);margin-bottom:4px}
+.combo-anchor .anchor-calc{font-size:14px;color:var(--text-muted)}
+.combo-anchor strong{color:var(--navy);font-size:17px}
+.combo-anchor .anchor-save{color:var(--success);font-weight:700;font-size:16px}
+
+@media(max-width:768px){
+  .oferta-layout{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+  .oferta-card-combo{order:-1;transform:none}
+  .oferta-card-combo:hover{transform:translateY(-4px)}
+  .oferta-card-single{opacity:1}
+}
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span>ACESSO IMEDIATO</span> — Comece a estudar agora mesmo, de qualquer lugar do Brasil
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Micropigmentação Paramédica</div>
+      <h1>Domine a técnica que me permite cobrar <em>R$1.500 a R$3.500 por sessão</em></h1>
+      <p class="hero-sub">Eu sou Fabiana Pereira e vou te ensinar, passo a passo, a técnica de camuflagem de cicatrizes e estrias, além da harmonização de aréolas — o método que eu aperfeiçoei ao longo de mais de 2.000 procedimentos reais.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>+2.000</strong><span>Procedimentos</span></div>
+        <div class="hero-stat"><strong>+500</strong><span>Alunas formadas</span></div>
+        <div class="hero-stat"><strong>10+</strong><span>Anos de experiência</span></div>
+      </div>
+      <a href="#oferta" class="cta-btn">QUERO ME INSCREVER →</a>
+      <span class="cta-sub" style="color:rgba(255,255,255,.35)">✓ Acesso imediato · ✓ Vitalício · ✓ Garantia de 7 dias</span>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="img-opt/1.webp" alt="Fabiana Pereira executando procedimento de camuflagem" loading="eager">
+      <div class="hero-img-overlay"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AUTORIDADE -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="auth-grid">
+      <div class="auth-img-wrap">
+        <img class="auth-img" src="img-opt/2.webp" alt="Fabiana Pereira — Especialista em Micropigmentação Paramédica" loading="lazy">
+      </div>
+      <div class="auth-text">
+        <h2>Prazer, eu sou a <em>Fabiana Pereira</em></h2>
+        <p>Há mais de 10 anos eu me dedico à micropigmentação paramédica. Nesse tempo, realizei mais de 2.000 procedimentos de camuflagem de cicatrizes, estrias, olheiras e harmonização de aréolas.</p>
+        <p>Criei o método <strong>Cicatriz Invisível</strong> porque sei o quanto é difícil aprender essas técnicas sem a orientação certa. Cada detalhe dos meus cursos vem da prática real — não é teoria de livro, é o que eu faço no meu consultório todos os dias.</p>
+        <div class="auth-creds">
+          <span class="auth-cred">+2.000 procedimentos</span>
+          <span class="auth-cred">+500 alunas</span>
+          <span class="auth-cred">10+ anos de prática</span>
+          <span class="auth-cred">Referência nacional</span>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<!-- DEPOIMENTOS BLOCO 1 -->
+<section class="section section-dark depo-section" style="padding-top:0">
+  <div class="container">
+    <div class="section-title">
+      <span class="overline">Resultados reais</span>
+      <h2>Alunas que <em>já mudaram de vida</em> com o método</h2>
+    </div>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-img-wrapper">
+          <img src="img-opt/3.webp" alt="Depoimento de aluna — já agendou várias pacientes" loading="lazy">
+        </div>
+        <div class="depo-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-2 17l-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/></svg>Mensagem real via WhatsApp</div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-img-wrapper">
+          <img src="img-opt/4.webp" alt="Depoimento de aluna — clientes chegando, melhor decisão" loading="lazy">
+        </div>
+        <div class="depo-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-2 17l-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/></svg>Mensagem real via WhatsApp</div>
+      </div>
+    </div>
+    <div class="depo-context">
+      <p>Essas alunas começaram <span>do zero</span> — assim como você pode começar agora</p>
+    </div>
+  </div>
+</section>
+
+<!-- CURSO 01 — CAMUFLAGEM -->
+<section class="section" id="camuflagem">
+  <div class="container">
+    <div class="curso-header">
+      <span class="curso-tag">Curso 01</span>
+      <h3>Camuflagem de <em>Cicatrizes, Estrias e Olheiras</em></h3>
+      <p>Neste curso, eu te ensino em detalhes a técnica que uso para camuflar cicatrizes de abdominoplastia, mastopexia, cesárea, queimaduras e cirurgias em geral, além de estrias e olheiras profundas.</p>
+      <p style="margin-top:12px">Os resultados são visíveis já na primeira sessão. É o mesmo passo a passo que me permitiu cobrar de R$1.500 a R$3.500 por procedimento.</p>
+    </div>
+
+    <!-- Fotos de ensino lado a lado -->
+    <div class="teaching-duo">
+      <div class="teaching-duo-card">
+        <img src="img-opt/5.webp" alt="Fabiana Pereira ensinando técnica de camuflagem a aluna" loading="lazy">
+      </div>
+      <div class="teaching-duo-card">
+        <img src="img-opt/6.webp" alt="Fabiana Pereira ministrando curso presencial de camuflagem" loading="lazy">
+      </div>
+    </div>
+    <div class="teaching-text-block" style="margin-bottom:40px">
+      <h3>Aprenda <em>na prática</em>, comigo guiando cada passo</h3>
+      <p>Não é só teoria em vídeo. Eu mostro exatamente como faço cada movimento, cada ajuste de pigmento e cada decisão durante o procedimento — do começo ao fim.</p>
+      <p>Você vai aprender o mesmo método que eu ensino nas minhas turmas presenciais, agora acessível de qualquer lugar do Brasil.</p>
+    </div>
+
+    <div class="modulos-grid">
+      <div class="modulo-card"><div class="modulo-num">01</div><h4>Colorimetria Aplicada</h4><p>Como eu analiso cada tom de pele para criar pigmentos personalizados que se integram perfeitamente à pele da cliente.</p></div>
+      <div class="modulo-card"><div class="modulo-num">02</div><h4>Biossegurança e Triagem</h4><p>O protocolo de segurança que uso em cada atendimento. Quais casos atender e quais encaminhar — para proteger você e sua cliente.</p></div>
+      <div class="modulo-card"><div class="modulo-num">03</div><h4>Técnica de Camuflagem</h4><p>Mão na massa: o passo a passo completo da minha técnica em cicatrizes, estrias, queimaduras e olheiras. Movimento de agulha, pressão e velocidade.</p></div>
+      <div class="modulo-card"><div class="modulo-num">04</div><h4>Equipamentos e Materiais</h4><p>Os mesmos equipamentos e pigmentos que eu uso no meu consultório. Lista completa com links de fornecedores para diferentes orçamentos.</p></div>
+      <div class="modulo-card"><div class="modulo-num">05</div><h4>Pós-procedimento</h4><p>Cuidados pós, manutenção e gerenciamento de expectativa. Como garantir que a cliente fique satisfeita, volte e indique você.</p></div>
+      <div class="modulo-card"><div class="modulo-num">06</div><h4>Precificação e Captação</h4><p>Como eu precifiquei meus serviços para cobrar alto e como você pode conquistar suas primeiras clientes rapidamente.</p></div>
+    </div>
+
+    <div class="section-title" style="margin-top:40px;margin-bottom:24px">
+      <h2 style="font-size:clamp(20px,3vw,28px)">Resultados reais da <em>minha técnica</em></h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <img src="img-opt/7.webp" alt="Antes e depois — Camuflagem de cicatriz de abdominoplastia" loading="lazy">
+        <div class="ba-caption">Camuflagem de abdominoplastia</div>
+      </div>
+      <div class="ba-card">
+        <img src="img-opt/8.webp" alt="Antes e depois — Camuflagem de cicatriz de abdominoplastia caso 2" loading="lazy">
+        <div class="ba-caption">Camuflagem de abdominoplastia</div>
+      </div>
+    </div>
+    <div class="ba-grid" style="margin-top:20px">
+      <div class="ba-card">
+        <img src="img-opt/9.webp" alt="Antes e depois — Camuflagem de cicatriz" loading="lazy">
+        <div class="ba-caption">Camuflagem de cicatriz</div>
+      </div>
+      <div class="ba-card">
+        <img src="img-opt/10.webp" alt="Antes e depois — Camuflagem de mastopexia" loading="lazy">
+        <div class="ba-caption">Camuflagem de mastopexia</div>
+      </div>
+    </div>
+    <div class="ba-grid" style="margin-top:20px;grid-template-columns:1fr;max-width:400px">
+      <div class="ba-card">
+        <img src="img-opt/11.webp" alt="Antes e depois — Camuflagem de estrias" loading="lazy">
+        <div class="ba-caption">Camuflagem de estrias</div>
+      </div>
+    </div>
+
+    <div class="curso-cta" style="margin-top:40px">
+      <a href="https://pay.hotmart.com/N105548137N?sck=HOTMART_PRODUCT_PAGE&off=4x5e57xi&hotfeature=32" target="_blank" class="cta-btn">QUERO APRENDER CAMUFLAGEM →</a>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-muted)">💡 Ou leve os dois cursos no <a href="https://pay.hotmart.com/I105860376T?bid=1778940806839" target="_blank" style="color:var(--gold);font-weight:600;text-decoration:underline">Combo Cicatriz Invisível</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CURSO 02 — ARÉOLAS -->
+<section class="section section-dark" id="areolas">
+  <div class="container">
+    <div class="curso-header">
+      <span class="curso-tag">Curso 02</span>
+      <h3>Harmonização de <em>Aréolas</em></h3>
+      <p>A técnica mais delicada da micropigmentação paramédica — e uma das mais valorizadas do mercado. Eu te ensino do planejamento ao resultado final.</p>
+    </div>
+    <div class="modulos-grid">
+      <div class="modulo-card"><div class="modulo-num">01</div><h4>Anatomia e Análise</h4><p>Como analisar cada caso: assimetrias, pós-mastectomia e reconstrução. Cada aréola é única, e o planejamento correto é o que faz toda a diferença.</p></div>
+      <div class="modulo-card"><div class="modulo-num">02</div><h4>Colorimetria para Aréolas</h4><p>Pigmentos específicos, mistura de tons e como chegar na cor natural perfeita para cada tom de pele.</p></div>
+      <div class="modulo-card"><div class="modulo-num">03</div><h4>Técnica de Harmonização</h4><p>Meu método passo a passo: traçado, preenchimento, efeito 3D e textura natural. Demonstração completa em casos reais.</p></div>
+      <div class="modulo-card"><div class="modulo-num">04</div><h4>Casos Especiais</h4><p>Pós-mastectomia, reconstrução mamária e assimetrias severas. Protocolos específicos para cada situação clínica.</p></div>
+    </div>
+    <div class="section-title" style="margin-top:40px;margin-bottom:24px">
+      <h2 style="font-size:clamp(20px,3vw,28px)">Resultados reais da <em>minha técnica</em></h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <img src="img-opt/12.webp" alt="Resultado de harmonização de aréola — caso 1" loading="lazy">
+        <div class="ba-caption">Harmonização de aréola — Resultado real</div>
+      </div>
+      <div class="ba-card">
+        <img src="img-opt/13.webp" alt="Resultado de harmonização de aréola — caso 2" loading="lazy">
+        <div class="ba-caption">Harmonização de aréola — Resultado real</div>
+      </div>
+    </div>
+    <div class="ba-grid" style="margin-top:20px;grid-template-columns:1fr;max-width:400px">
+      <div class="ba-card">
+        <img src="img-opt/14.webp" alt="Antes e depois — Harmonização de aréola caso 3" loading="lazy">
+        <div class="ba-caption">Harmonização de aréola — Antes e depois</div>
+      </div>
+    </div>
+    <div class="curso-cta" style="margin-top:40px">
+      <a href="https://pay.hotmart.com/E105548190V?sck=HOTMART_PRODUCT_PAGE&off=fg4gsesy&hotfeature=32" target="_blank" class="cta-btn">QUERO APRENDER HARMONIZAÇÃO →</a>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-light)">💡 Ou leve os dois cursos no <a href="https://pay.hotmart.com/I105860376T?bid=1778940806839" target="_blank" style="color:var(--gold-light);font-weight:600;text-decoration:underline">Combo Cicatriz Invisível</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-title">
+      <span class="overline">Inclusos nos cursos</span>
+      <h2>Bônus que <em>aceleram seus resultados</em></h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="bonus-num">01</div><h4>Lista de Fornecedores</h4><p>Os mesmos fornecedores e materiais que eu uso no meu consultório, com opções para diferentes orçamentos.</p><div class="bonus-value">Incluso <s>R$47</s></div></div>
+      <div class="bonus-card"><div class="bonus-num">02</div><h4>Modelo de Anamnese</h4><p>O formulário que uso para avaliar cada cliente com segurança e profissionalismo antes do procedimento.</p><div class="bonus-value">Incluso <s>R$37</s></div></div>
+      <div class="bonus-card"><div class="bonus-num">03</div><h4>Guia de Precificação</h4><p>Como eu defini meus preços para cobrar de R$1.500 a R$3.500 por sessão — e como você pode fazer o mesmo.</p><div class="bonus-value">Incluso <s>R$97</s></div></div>
+      <div class="bonus-card"><div class="bonus-num">04</div><h4>Grupo de Suporte no WhatsApp</h4><p>Acesso ao grupo exclusivo comigo para tirar dúvidas e receber orientação nos seus primeiros atendimentos.</p><div class="bonus-value">Incluso <s>R$197</s></div></div>
+      <div class="bonus-card"><div class="bonus-num">05</div><h4>Certificado de Conclusão</h4><p>Certificado para atestar sua formação e transmitir confiança às suas clientes desde o primeiro dia.</p><div class="bonus-value">Incluso <s>R$97</s></div></div>
+      <div class="bonus-card"><div class="bonus-num">06</div><h4>Acesso Vitalício + Atualizações</h4><p>Acesso para sempre a todo o conteúdo, incluindo atualizações futuras que eu adicionar — sem custo extra.</p><div class="bonus-value">Incluso</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS BLOCO 2 -->
+<section class="section section-dark depo-section">
+  <div class="container">
+    <div class="quote-bg">"</div>
+    <div class="section-title">
+      <span class="overline">Suporte que faz a diferença</span>
+      <h2>Eu acompanho cada aluna <em>de perto</em></h2>
+    </div>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-img-wrapper">
+          <img src="img-opt/15.webp" alt="Depoimento de aluna sobre segurança e suporte pós-curso" loading="lazy">
+        </div>
+        <div class="depo-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-2 17l-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/></svg>Mensagem real via WhatsApp</div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-img-wrapper">
+          <img src="img-opt/16.webp" alt="Depoimento de aluna sobre o curso incrível" loading="lazy">
+        </div>
+        <div class="depo-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-2 17l-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/></svg>Mensagem real via WhatsApp</div>
+      </div>
+    </div>
+    <div class="depo-context">
+      <p>Mais de <span>500 alunas</span> já passaram pelo meu método — e eu continuo acompanhando cada uma</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="section" id="oferta">
+  <div class="container">
+    <div class="section-title">
+      <span class="overline">Investimento</span>
+      <h2>Domine as duas técnicas e <em>cobre mais por sessão</em></h2>
+    </div>
+    <div class="oferta-layout">
+      <div class="oferta-card-single">
+        <h3>Camuflagem de Cicatrizes</h3>
+        <div class="price-old">De R$1.200</div>
+        <div class="price"><small>R$</small>297</div>
+        <div class="price-info">ou 12x de R$29,22</div>
+        <ul><li>6 módulos completos</li><li>Cicatrizes, estrias e olheiras</li><li>Lista de fornecedores</li><li>Grupo de suporte WhatsApp</li><li>Certificado de conclusão</li><li>Acesso vitalício</li></ul>
+        <a href="https://pay.hotmart.com/N105548137N?sck=HOTMART_PRODUCT_PAGE&off=4x5e57xi&hotfeature=32" target="_blank" class="cta-btn" style="width:100%;font-size:13px;padding:14px 20px">QUERO ESTE CURSO →</a>
+      </div>
+      <div class="oferta-card-combo">
+        <div class="combo-badge">⭐ Mais escolhido</div>
+        <h3>Combo Cicatriz Invisível</h3>
+        <p class="combo-includes">Camuflagem + Harmonização de Aréolas</p>
+        <div class="price-old-combo">De R$494</div>
+        <div class="price"><small>R$</small>397</div>
+        <div class="price-info">ou 12x de R$41,06</div>
+        <ul><li>10 módulos completos (6 + 4)</li><li>Camuflagem de cicatrizes, estrias e olheiras</li><li>Harmonização de aréolas com técnica 3D</li><li>Casos pós-mastectomia e especiais</li><li>Lista de fornecedores</li><li>Grupo de suporte WhatsApp</li><li>2 certificados de conclusão</li><li>Acesso vitalício a tudo</li></ul>
+        <a href="https://pay.hotmart.com/I105860376T?bid=1778940806839" target="_blank" class="cta-btn">QUERO O COMBO CICATRIZ INVISÍVEL →</a>
+        <p style="font-size:12px;color:rgba(255,255,255,.35);margin-top:12px">As duas técnicas mais valorizadas da micropigmentação paramédica em um só lugar</p>
+      </div>
+      <div class="oferta-card-single">
+        <h3>Harmonização de Aréolas</h3>
+        <div class="price-old">De R$800</div>
+        <div class="price"><small>R$</small>197</div>
+        <div class="price-info">ou 12x de R$19,41</div>
+        <ul><li>4 módulos completos</li><li>Técnica 3D exclusiva</li><li>Casos pós-mastectomia</li><li>Grupo de suporte WhatsApp</li><li>Certificado de conclusão</li><li>Acesso vitalício</li></ul>
+        <a href="https://pay.hotmart.com/E105548190V?sck=HOTMART_PRODUCT_PAGE&off=fg4gsesy&hotfeature=32" target="_blank" class="cta-btn" style="width:100%;font-size:13px;padding:14px 20px">QUERO ESTE CURSO →</a>
+      </div>
+    </div>
+    <div class="garantia">
+      <div class="garantia-icon">🛡️</div>
+      <div>
+        <h4>Garantia incondicional de 7 dias</h4>
+        <p>Se por qualquer motivo você sentir que o curso não é pra você, basta me pedir o reembolso em até 7 dias. Eu devolvo 100% do valor, sem perguntas e sem burocracia. O risco é todo meu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="section-title">
+      <span class="overline">Dúvidas frequentes</span>
+      <h2>Perguntas que minhas alunas <em>sempre fazem</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Preciso ter experiência prévia em estética?<span class="arrow">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Não. O método foi pensado para quem está começando do zero. Eu te guio desde a teoria até a prática, passo a passo. Muitas das minhas alunas nunca tinham segurado um dermógrafo antes de começar.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">O curso é online? Como funciona o acesso?<span class="arrow">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Sim, 100% online. Assim que o pagamento é confirmado, você recebe acesso imediato à plataforma Hotmart. Pode assistir quando quiser, quantas vezes quiser — no celular ou no computador.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">O acesso é realmente vitalício?<span class="arrow">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Sim. Uma vez que você compra, o acesso é seu para sempre. Isso inclui todas as atualizações futuras que eu adicionar, sem nenhum custo extra.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Preciso comprar materiais caros para começar?<span class="arrow">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Não necessariamente. Nos cursos eu incluo uma lista de materiais com links de fornecedores para diferentes orçamentos. O investimento inicial é acessível e se paga já no primeiro atendimento.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">E se eu não gostar do curso?<span class="arrow">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Você tem 7 dias de garantia incondicional. Basta me pedir o reembolso e eu devolvo 100% do valor. Sem perguntas e sem burocracia.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Por que o combo é a melhor escolha?<span class="arrow">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Quem domina as duas técnicas se posiciona como especialista completa em micropigmentação paramédica. A maioria das minhas alunas que fez o combo consegue uma agenda cheia em menos de 3 meses — porque pouquíssimas profissionais oferecem esse serviço completo no mercado. É o caminho mais rápido para uma agenda cheia.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta">
+  <div class="container">
+    <h2>A decisão é sua: continuar tentando sozinha ou <em>dominar as duas técnicas que mais valorizam na micropigmentação paramédica</em></h2>
+    <p>Profissionais que dominam camuflagem e harmonização de aréolas conseguem agenda cheia em menos de 3 meses — porque pouquíssimas oferecem o serviço completo.</p>
+    <div class="final-cta-btns">
+      <a href="https://pay.hotmart.com/I105860376T?bid=1778940806839" target="_blank" class="cta-btn" style="font-size:16px;padding:18px 48px">Combo Cicatriz Invisível — R$397 <span style="display:block;font-size:11px;font-weight:400;margin-top:4px;text-transform:none;letter-spacing:0">Camuflagem + Harmonização de Aréolas</span></a>
+    </div>
+    <div class="final-cta-btns" style="margin-top:12px">
+      <a href="https://pay.hotmart.com/N105548137N?sck=HOTMART_PRODUCT_PAGE&off=4x5e57xi&hotfeature=32" target="_blank" class="cta-btn" style="background:transparent;border:1px solid rgba(196,162,101,.4);color:var(--gold-light);box-shadow:none;font-size:13px;padding:12px 28px">Camuflagem — R$297</a>
+      <a href="https://pay.hotmart.com/E105548190V?sck=HOTMART_PRODUCT_PAGE&off=fg4gsesy&hotfeature=32" target="_blank" class="cta-btn" style="background:transparent;border:1px solid rgba(196,162,101,.4);color:var(--gold-light);box-shadow:none;font-size:13px;padding:12px 28px">Harmonização — R$197</a>
+    </div>
+    <span class="cta-sub" style="color:rgba(255,255,255,.35);margin-top:20px;display:block">✓ Acesso imediato · ✓ Vitalício · ✓ Garantia de 7 dias</span>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Cicatriz Invisível by Fabiana Pereira · Todos os direitos reservados<br>
+    <small style="color:rgba(255,255,255,.15);margin-top:4px;display:inline-block">Este produto é comercializado com apoio da Hotmart.</small>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  function scrollToOferta(){
+    var el=document.getElementById('oferta');
+    if(!el)return;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-12;
+    window.scrollTo({top:y,behavior:'smooth'});
+  }
+  document.querySelectorAll('a[href="#oferta"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      // Force-load all lazy images above #oferta before scrolling
+      var ofertaTop=document.getElementById('oferta').offsetTop;
+      document.querySelectorAll('img[loading="lazy"]').forEach(function(img){
+        if(img.offsetTop<ofertaTop&&!img.complete){
+          img.loading='eager';
+        }
+      });
+      // Scroll immediately, then re-scroll after images settle
+      scrollToOferta();
+      setTimeout(scrollToOferta,400);
+      setTimeout(scrollToOferta,900);
+    });
+  });
+})();
+</script>
+</body>
+</html>
